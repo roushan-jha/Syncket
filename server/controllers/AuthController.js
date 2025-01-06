@@ -16,6 +16,11 @@ export const signup = async (req, res, next) => {
     if (!email || !password) {
       return res.status(400).send("Email and Password is required.");
     }
+    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return res.status(400).json({ message: "Invalid email format." });
+    }
+
     const user = await User.create({ email, password });
     res.cookie("jwt", createToken(email, user.id), {
       maxAge,
