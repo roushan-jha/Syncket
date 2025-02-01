@@ -1,31 +1,41 @@
+import { useSocket } from "@/context/SocketContext";
+import { useAppStore } from "@/store";
 import EmojiPicker from "emoji-picker-react";
 import { useEffect, useRef, useState } from "react";
-import { GrAttachment } from 'react-icons/gr';
+import { GrAttachment } from "react-icons/gr";
 import { IoSend } from "react-icons/io5";
 import { RiEmojiStickerLine } from "react-icons/ri";
 
 const MessageBar = () => {
   const emojiRef = useRef();
+  const { selectedChatType, selectedChatData, userInfo } = useAppStore();
+  const socket = useSocket();
   const [message, setMessage] = useState("");
   const [emojiPickerOpen, setEmojiPickerOpen] = useState(false);
 
   useEffect(() => {
     function handleClickOutside(e) {
-      if(emojiRef.current && !emojiRef.current.contains(e.target)) {
+      if (emojiRef.current && !emojiRef.current.contains(e.target)) {
         setEmojiPickerOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-    }
-  }, [emojiRef])
+    };
+  }, [emojiRef]);
 
   const handleAddEmoji = (emoji) => {
     setMessage((msg) => msg + emoji.emoji);
-  }
+  };
   const handleSendMessage = async () => {
-
+    socket.emit("sendMessage", {
+      sender: userInfo.id,
+      content: message,
+      recipient: selectedChatData._id,
+      messageTypes: "text",
+      fileUrl: undefined,
+    });
   };
 
   return (
@@ -38,26 +48,30 @@ const MessageBar = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
-        <button className='text-neutral-500 focus:border-none focus:outline-none focus:text-white duration-300 transition-all'>
+        <button className="text-neutral-500 focus:border-none focus:outline-none focus:text-white duration-300 transition-all">
           <GrAttachment className="text-2xl" />
         </button>
         <div className="relative">
-          <button className='text-neutral-500 focus:border-none focus:outline-none focus:text-white duration-300 transition-all'
-          onClick={() => setEmojiPickerOpen(true)}>
+          <button
+            className="text-neutral-500 focus:border-none focus:outline-none focus:text-white duration-300 transition-all"
+            onClick={() => setEmojiPickerOpen(true)}
+          >
             <RiEmojiStickerLine className="text-2xl" />
           </button>
           <div className="absolute bottom-16 right-0" ref={emojiRef}>
-            <EmojiPicker 
-            open={emojiPickerOpen}
-            onEmojiClick={handleAddEmoji}
-            theme="dark"
-            autoFocusSearch={false}
+            <EmojiPicker
+              open={emojiPickerOpen}
+              onEmojiClick={handleAddEmoji}
+              theme="dark"
+              autoFocusSearch={false}
             />
           </div>
         </div>
       </div>
-      <button className='bg-[#8417ff] hover:bg-[#741bda] focus:bg-[#741bda] rounded-md flex items-center justify-center p-5 focus:border-none focus:outline-none focus:text-white duration-300 transition-all'
-      onClick={handleSendMessage}>
+      <button
+        className="bg-[#8417ff] hover:bg-[#741bda] focus:bg-[#741bda] rounded-md flex items-center justify-center p-5 focus:border-none focus:outline-none focus:text-white duration-300 transition-all"
+        onClick={handleSendMessage}
+      >
         <IoSend className="text-2xl" />
       </button>
     </div>
