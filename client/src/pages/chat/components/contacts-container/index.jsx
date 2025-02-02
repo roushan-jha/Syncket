@@ -70,7 +70,9 @@ const Logo = () => {
           fill="#a16ee8"
         ></path>{" "}
       </svg>
-      <span className="text-3xl font-semibold ">SocketSync</span>
+      <div className="flex justify-center text-center">
+        <span className="text-4xl font-semibold">Syncket</span>
+      </div>
     </div>
   );
 };
