@@ -7,21 +7,18 @@ import { useAppStore } from "@/store";
 import ContactList from "@/components/ContactList";
 
 const ContactsContainer = () => {
-
   const { directMessagesContacts, setDirectMessagesContacts } = useAppStore();
-
-  console.log("directMessagesContacts", directMessagesContacts);
 
   useEffect(() => {
     const getContacts = async () => {
       const response = await apiClient.get(GET_DM_CONTACTS_ROUTES, {
         withCredentials: true,
       });
-      console.log("response",response.data.contacts)
-      if(response.data.contacts) {
+
+      if (response.data.contacts) {
         setDirectMessagesContacts(response.data.contacts);
       }
-    }
+    };
 
     getContacts();
   }, []);

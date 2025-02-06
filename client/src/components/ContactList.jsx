@@ -12,8 +12,6 @@ const ContactList = ({ contacts, isChannel = false }) => {
     setSelectedChatMessages,
   } = useAppStore();
 
-  console.log("contacts: ",contacts);
-
   const handleClick = (contact) => {
     if (isChannel) {
       setSelectedChatType("channel");
