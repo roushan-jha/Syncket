@@ -1,0 +1,35 @@
+Interior design is essential for improving the appearance and utility of living spaces. In the past, designing a room often involved physical trial and error, numerous consultations, and typically relied on static 2D floor plans or costly 3D modeling software. Nevertheless, advancements in Augmented Reality (AR) and Artificial Intelligence (AI) are transforming how individuals plan and visualize their interiors.
+
+Contemporary AR applications allow users to place virtual furniture into real-world spaces, leading to improved decision-making prior to making a purchase. Moreover, AI-driven tools, such as generative models and retrieval-augmented generation (RAG) chatbots, have enhanced the user experience by providing tailored recommendations based on individual preferences. Yet, many current solutions do not integrate virtual placement, AI-driven interior recommendations, and cultural design guidance, such as Vastu Shastra.
+
+To address this gap, Furnit.Ar merges AR with AI-driven features, enabling users to visualize furniture placement, receive Vastu-based design suggestions, convert real-world objects into 3D models, and obtain AI-generated interior design ideas tailored to their preferences. This research investigates how effective Furnit.Ar is in streamlining the interior design process, improving user experience, and enhancing decision-making through immersive technologies.
+
+The primary aim of this research is to create and evaluate Furnit.Ar, a computer vision-based AR interior design application that enhances the user experience with interactive, intelligent, and personalized design options. This research seeks to:
+
+⦁ Enable Virtual Interior Visualization – Use Augmented Reality (AR) to allow users to position and resize furniture within their physical spaces, promoting better decision-making before they buy.
+
+⦁ Incorporate Vastu-Based Recommendations – Deploy a Retrieval-Augmented Generation (RAG) chatbot to offer users suggestions for Vastu-compliant furniture arrangements.
+
+⦁ Create a 3D Model Conversion System – Transform 2D images of real-world items into 3D models, allowing users to integrate custom pieces into their interior design.
+
+⦁ Generate AI-Enhanced Interior Designs – Apply diffusion models to provide personalized room layouts and decor suggestions based on user preferences and images of their rooms.
+
+⦁ Evaluate the Effectiveness of AI and AR Integration – Assess the usability, efficiency, and accuracy of Furnit.Ar’s AI-driven design assistance compared to conventional interior design methods.
+
+This study aims to illustrate how AI and AR technologies can simplify and improve interior design processes, making them more accessible, engaging, and customized for users.
+
+The combination of Artificial Intelligence (AI) and Augmented Reality (AR) in interior design has the potential to change how users plan and visualize their living environments. Traditional methods often depend on manual measurements, static 2D blueprints, and expensive 3D modeling tools, making the process labor-intensive and less accessible for average consumers. Furnit.Ar intends to fill this gap by providing a user-friendly, engaging, and AI-driven solution that enhances decision-making and customization.
+
+The importance of this study is highlighted in these areas:
+
+⦁ Improving User Experience in Interior Design – By incorporating AR-based virtual furniture placement, users can explore various layouts in real-time, lowering uncertainty before making purchases.
+
+⦁ Blending Traditional and Modern Design Practices – The Vastu Assistant (RAG chatbot) ensures that traditional cultural concepts are maintained while utilizing modern technology, appealing to users who adhere to Vastu Shastra for home design.
+
+⦁ Enhancing AI-Driven Customization – The capacity to convert 2D images into 3D models and utilize diffusion models for AI-generated design suggestions personalizes the interior design process, making it more reachable and tailored to personal preferences.
+
+⦁ Minimizing Cost and Effort in Home Planning – Users can utilize Furnit.Ar for an economical and effective means of visualizing and organizing their spaces, rather than hiring professional designers or investing in costly software.
+
+⦁ Contributing to Future AI-AR Integration Research – This research offers valuable insights into the challenges and successes of merging AI and AR in practical applications, supporting further studies in smart home technologies and interactive design tools.
+
+By demonstrating the practicality and influence of AI and AR in interior design, this research highlights the transformative potential of immersive technologies in shaping the future of home planning and decor.
