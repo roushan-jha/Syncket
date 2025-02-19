@@ -77,7 +77,6 @@ const Profile = () => {
 
   const handleImageChange = async (e) => {
     const file = e.target.files[0];
-    console.log({ file });
     if(file) {
       const formData = new FormData();
       formData.append("profile-image", file);
